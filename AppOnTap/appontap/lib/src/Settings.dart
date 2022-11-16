@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:appontap/src/DashBoard.dart';
 import 'package:appontap/src/Dialogs.dart';
 import 'package:appontap/src/Edit.dart';

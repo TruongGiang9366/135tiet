@@ -1,4 +1,4 @@
-package com.example.appontap
+package com.App.appontap
 
 import io.flutter.embedding.android.FlutterActivity
 
