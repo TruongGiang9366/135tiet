@@ -106,188 +106,206 @@ class _OTP_PageState extends State<OTP_Page> {
                               ),
                             ),
                           ),
-                          Container(
-                            child: Column(
-                              children: [
-                                Center(
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            10, 10, 10, 10),
-                                        child: SizedBox(
-                                          height: 70,
-                                          child: AspectRatio(
-                                            aspectRatio: 1.0,
-                                            child: TextField(
-                                              autofocus: true,
-                                              onChanged: (value) {},
-                                              showCursor: false,
-                                              readOnly: false,
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 24,
-                                              ),
-                                              keyboardType:
-                                                  TextInputType.number,
-                                              maxLength: 1,
-                                              decoration: InputDecoration(
-                                                counter: Offstage(),
-                                                enabledBorder:
-                                                    OutlineInputBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(12),
-                                                  borderSide: BorderSide(
-                                                      width: 2,
-                                                      color: Colors.black12),
-                                                ),
-                                                focusedBorder:
-                                                    OutlineInputBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(12),
-                                                  borderSide: BorderSide(
-                                                      width: 2,
-                                                      color: Colors.black),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            10, 10, 10, 10),
-                                        child: SizedBox(
-                                          height: 70,
-                                          child: AspectRatio(
-                                            aspectRatio: 1.0,
-                                            child: TextField(
-                                              autofocus: true,
-                                              onChanged: (value) {},
-                                              showCursor: false,
-                                              readOnly: false,
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 24,
-                                              ),
-                                              keyboardType:
-                                                  TextInputType.number,
-                                              maxLength: 1,
-                                              decoration: InputDecoration(
-                                                counter: Offstage(),
-                                                enabledBorder:
-                                                    OutlineInputBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(12),
-                                                  borderSide: BorderSide(
-                                                      width: 2,
-                                                      color: Colors.black12),
-                                                ),
-                                                focusedBorder:
-                                                    OutlineInputBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(12),
-                                                  borderSide: BorderSide(
-                                                      width: 2,
-                                                      color: Colors.black),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    Center(
+                                      child: Row(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 10, right: 10),
+                                            child: SizedBox(
+                                              height: 70,
+                                              child: AspectRatio(
+                                                aspectRatio: 1.0,
+                                                child: TextField(
+                                                  autofocus: true,
+                                                  onChanged: (value) {},
+                                                  showCursor: false,
+                                                  readOnly: false,
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 24,
+                                                  ),
+                                                  keyboardType:
+                                                      TextInputType.number,
+                                                  maxLength: 1,
+                                                  decoration: InputDecoration(
+                                                    counter: Offstage(),
+                                                    enabledBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              12),
+                                                      borderSide: BorderSide(
+                                                          width: 2,
+                                                          color:
+                                                              Colors.black12),
+                                                    ),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              12),
+                                                      borderSide: BorderSide(
+                                                          width: 2,
+                                                          color: Colors.black),
+                                                    ),
+                                                  ),
                                                 ),
                                               ),
                                             ),
                                           ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            10, 10, 10, 10),
-                                        child: SizedBox(
-                                          height: 70,
-                                          child: AspectRatio(
-                                            aspectRatio: 1.0,
-                                            child: TextField(
-                                              autofocus: true,
-                                              onChanged: (value) {},
-                                              showCursor: false,
-                                              readOnly: false,
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 24,
-                                              ),
-                                              keyboardType:
-                                                  TextInputType.number,
-                                              maxLength: 1,
-                                              decoration: InputDecoration(
-                                                counter: Offstage(),
-                                                enabledBorder:
-                                                    OutlineInputBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(12),
-                                                  borderSide: BorderSide(
-                                                      width: 2,
-                                                      color: Colors.black12),
-                                                ),
-                                                focusedBorder:
-                                                    OutlineInputBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(12),
-                                                  borderSide: BorderSide(
-                                                      width: 2,
-                                                      color: Colors.black),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            10, 10, 10, 10),
-                                        child: SizedBox(
-                                          height: 70,
-                                          child: AspectRatio(
-                                            aspectRatio: 1.0,
-                                            child: TextField(
-                                              autofocus: true,
-                                              onChanged: (value) {},
-                                              showCursor: false,
-                                              readOnly: false,
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 24,
-                                              ),
-                                              keyboardType:
-                                                  TextInputType.number,
-                                              maxLength: 1,
-                                              decoration: InputDecoration(
-                                                counter: Offstage(),
-                                                enabledBorder:
-                                                    OutlineInputBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(12),
-                                                  borderSide: BorderSide(
-                                                      width: 2,
-                                                      color: Colors.black12),
-                                                ),
-                                                focusedBorder:
-                                                    OutlineInputBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(12),
-                                                  borderSide: BorderSide(
-                                                      width: 2,
-                                                      color: Colors.black),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 10, right: 10),
+                                            child: SizedBox(
+                                              height: 70,
+                                              child: AspectRatio(
+                                                aspectRatio: 1.0,
+                                                child: TextField(
+                                                  autofocus: true,
+                                                  onChanged: (value) {},
+                                                  showCursor: false,
+                                                  readOnly: false,
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 24,
+                                                  ),
+                                                  keyboardType:
+                                                      TextInputType.number,
+                                                  maxLength: 1,
+                                                  decoration: InputDecoration(
+                                                    counter: Offstage(),
+                                                    enabledBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              12),
+                                                      borderSide: BorderSide(
+                                                          width: 2,
+                                                          color:
+                                                              Colors.black12),
+                                                    ),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              12),
+                                                      borderSide: BorderSide(
+                                                          width: 2,
+                                                          color: Colors.black),
+                                                    ),
+                                                  ),
                                                 ),
                                               ),
                                             ),
                                           ),
-                                        ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 10, right: 10),
+                                            child: SizedBox(
+                                              height: 70,
+                                              child: AspectRatio(
+                                                aspectRatio: 1.0,
+                                                child: TextField(
+                                                  autofocus: true,
+                                                  onChanged: (value) {},
+                                                  showCursor: false,
+                                                  readOnly: false,
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 24,
+                                                  ),
+                                                  keyboardType:
+                                                      TextInputType.number,
+                                                  maxLength: 1,
+                                                  decoration: InputDecoration(
+                                                    counter: Offstage(),
+                                                    enabledBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              12),
+                                                      borderSide: BorderSide(
+                                                          width: 2,
+                                                          color:
+                                                              Colors.black12),
+                                                    ),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              12),
+                                                      borderSide: BorderSide(
+                                                          width: 2,
+                                                          color: Colors.black),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 10, right: 10),
+                                            child: SizedBox(
+                                              height: 70,
+                                              child: AspectRatio(
+                                                aspectRatio: 1.0,
+                                                child: TextField(
+                                                  autofocus: true,
+                                                  onChanged: (value) {},
+                                                  showCursor: false,
+                                                  readOnly: false,
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 24,
+                                                  ),
+                                                  keyboardType:
+                                                      TextInputType.number,
+                                                  maxLength: 1,
+                                                  decoration: InputDecoration(
+                                                    counter: Offstage(),
+                                                    enabledBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              12),
+                                                      borderSide: BorderSide(
+                                                          width: 2,
+                                                          color:
+                                                              Colors.black12),
+                                                    ),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              12),
+                                                      borderSide: BorderSide(
+                                                          width: 2,
+                                                          color: Colors.black),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
-                              ],
+                              ),
                             ),
                           ),
                           Padding(

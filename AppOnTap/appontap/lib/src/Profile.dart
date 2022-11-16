@@ -15,7 +15,7 @@ class _Profile_PageState extends State<Profile_Page> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Color(0xff7EDA6F),
-        toolbarHeight: 50,
+        toolbarHeight: 100,
         elevation: 0,
         //backgroundColor: Colors.blue,
         centerTitle: true,
@@ -45,7 +45,7 @@ class _Profile_PageState extends State<Profile_Page> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => DashBoard_Page())),
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.arrow_back,
                               color: Colors.black,
                             ),
@@ -68,198 +68,241 @@ class _Profile_PageState extends State<Profile_Page> {
           ],
         ),
       ),
-      body: Stack(
-        alignment: Alignment.center,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              color: Color(0xff7EDA6F),
-              borderRadius: BorderRadius.circular(0),
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.only(
-              top: 200,
-            ),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20),
-                topRight: Radius.circular(20),
-              ),
-            ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
-                child: Container(
-                  padding: EdgeInsets.all(10.0),
-                  width: MediaQuery.of(context).size.width / 2,
-                  height: MediaQuery.of(context).size.width / 2,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.white, width: 5),
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/man.png'),
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        height: (MediaQuery.of(context).size.width / 4) + 20,
+                        decoration:
+                            const BoxDecoration(color: Color(0xff7EDA6F)),
+                      ),
+                      Container(
+                        decoration:
+                            const BoxDecoration(color: Color(0xff7EDA6F)),
+                        child: Container(
+                          height: (MediaQuery.of(context).size.width / 4) + 20,
+                          decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(20),
+                                topLeft: Radius.circular(20),
+                              )),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(10.0),
+                    width: MediaQuery.of(context).size.width / 2,
+                    height: MediaQuery.of(context).size.width / 2,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white, width: 5),
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/man.png'),
+                      ),
                     ),
                   ),
+                  // ignore: avoid_unnecessary_containers
+                  Container(
+                    width: MediaQuery.of(context).size.width / 8,
+                    height: MediaQuery.of(context).size.width / 8,
+                    margin: EdgeInsets.only(
+                      top: ((MediaQuery.of(context).size.width / 2) -
+                          (MediaQuery.of(context).size.width / 8) +
+                          10 +
+                          (MediaQuery.of(context).size.width / 16)),
+                    ),
+                    // ignore: sort_child_properties_last
+                    child: IconButton(
+                      icon: const Icon(
+                        Icons.camera_alt,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {},
+                    ),
+                    decoration: const BoxDecoration(
+                        shape: BoxShape.circle, color: Colors.black54),
+                  )
+                ],
+              ),
+              Container(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
                 ),
-              )
+                padding: const EdgeInsets.only(
+                  top: 30,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(
+                        right: 30,
+                      ),
+                      child: const Text(
+                        "HI, Madam",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width / 8,
+                      height: MediaQuery.of(context).size.width / 8,
+
+                      // ignore: sort_child_properties_last
+                      child: IconButton(
+                        icon: const Icon(
+                          Icons.edit,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {},
+                      ),
+                      decoration: const BoxDecoration(
+                          shape: BoxShape.circle, color: Colors.black54),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                ),
+                padding: const EdgeInsets.only(
+                  top: 100,
+                  left: 50,
+                  right: 50,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(
+                            bottom: 10,
+                          ),
+                          child: const Text(
+                            "Họ Và Tên: ",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                            bottom: 10,
+                          ),
+                          child: const Text(
+                            "Ngày Sinh: ",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                            bottom: 10,
+                          ),
+                          child: const Text(
+                            "Email: ",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                            bottom: 10,
+                          ),
+                          child: const Text(
+                            "Số điện thoại:",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(
+                            bottom: 10,
+                          ),
+                          child: const Text(
+                            "Nguyễn Văn A",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                            bottom: 10,
+                          ),
+                          child: const Text(
+                            "yyyy/dd/mm",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                            bottom: 10,
+                          ),
+                          child: const Text(
+                            "profile@gmail.com",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                            bottom: 10,
+                          ),
+                          child: const Text(
+                            "0913214122",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
-          Center(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 290, left: 4, top: 160),
-              child: CircleAvatar(
-                backgroundColor: Colors.black54,
-                child: IconButton(
-                  icon: Icon(
-                    Icons.camera_alt,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {},
-                ),
-              ),
-            ),
-          ),
-          Center(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 210, left: 140, top: 160),
-              child: CircleAvatar(
-                backgroundColor: Colors.black54,
-                child: IconButton(
-                  icon: Icon(
-                    Icons.edit,
-                    color: Colors.white,
-                    size: 18,
-                  ),
-                  onPressed: () {},
-                ),
-              ),
-            ),
-          ),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 50),
-                  child: Text(
-                    "HI, Madam",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 150, 8, 8),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Họ Và Tên: ",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "Nguyễn Văn A",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Ngày Sinh: ",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "yyyy/dd/mm",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Email của bạn: ",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "profile@gmail.com",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Số điện thoại:",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "0913214122",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          )
-        ],
+        ),
       ),
     );
   }
