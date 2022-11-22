@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "95456594468",
+    "project_id": "study-f543d",
+    "storage_bucket": "study-f543d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95456594468:android:21bd8fe60ba31ae769e6b1",
+        "android_client_info": {
+          "package_name": "com.App.appontap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95456594468-557cgfsfv6li60q719d4g29mvsm50i52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8QhTomC0cq3tR87B7kKLU4Uq0dzBgsmE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95456594468-557cgfsfv6li60q719d4g29mvsm50i52.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

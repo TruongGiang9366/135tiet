@@ -22,6 +22,7 @@ class _Login_PageState extends State<Login_Page> {
           backgroundColor: Color(0xffDAB56F),
           toolbarHeight: 100,
           elevation: 0,
+          
           //backgroundColor: Colors.blue,
           centerTitle: true,
           title: Container(
@@ -93,7 +94,7 @@ class _Login_PageState extends State<Login_Page> {
                                 prefix: Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 8),
                                   child: Text(
-                                    '+91',
+                                    '+84',
                                     style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
@@ -185,6 +186,8 @@ class _Login_PageState extends State<Login_Page> {
   }
 
   Widget gotoOTP_Page(BuildContext context) {
-    return OTP_Page();
+    return OTP_Page(toString());
   }
+
+  
 }
