@@ -4,6 +4,7 @@ import 'package:appontap/src/Register.dart';
 import 'package:appontap/src/blogs/Login_blog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/async.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Login_Page extends StatefulWidget {
   @override
@@ -22,7 +23,7 @@ class _Login_PageState extends State<Login_Page> {
           backgroundColor: Color(0xffDAB56F),
           toolbarHeight: 100,
           elevation: 0,
-          
+
           //backgroundColor: Colors.blue,
           centerTitle: true,
           title: Container(
@@ -70,90 +71,84 @@ class _Login_PageState extends State<Login_Page> {
                         fontSize: 36,
                       ),
                     ),
-                    Stack(
+                    Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(30, 50, 30, 70),
-                          child: StreamBuilder(
-                            stream: bloc.phoneStream,
-                            builder: (context, snapshot) => TextField(
-                              controller: _phonenumberController,
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.black,
-                              ),
-                              decoration: InputDecoration(
-                                hintText: 'Số điện thoại',
-                                labelText: 'Số điện thoại',
-                                errorText: snapshot.hasError
-                                    ? snapshot.error.toString()
-                                    : null,
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
+                          padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
+                          child: SizedBox(
+                            width: 300,
+                            height: 70,
+                            child: ElevatedButton.icon(
+                              onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => OTP_Page(toString()),
+                                  )),
+                              icon: Icon(Icons.phone),
+                              label: Text(
+                                "Đăng Nhập Bằng Số Điện Thoại",
+                                style: TextStyle(
+                                  fontSize: 20,
                                 ),
-                                prefix: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 8),
-                                  child: Text(
-                                    '+84',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                              ),
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(
+                                    Color.fromRGBO(30, 144, 255, 1)),
+                                shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
                                   ),
                                 ),
-                                labelStyle: TextStyle(
-                                    color: Color(0xff888888), fontSize: 15),
-                              ),
-                              keyboardType: TextInputType.phone,
-                              textInputAction: TextInputAction.done,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                      child: SizedBox(
-                        width: 200,
-                        height: 50,
-                        child: ElevatedButton(
-                          onPressed: onOTP,
-                          child: Text(
-                            'Tiếp Tục',
-                            style: TextStyle(fontSize: 15, color: Colors.black),
-                          ),
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(Color(0xFFe0e0e0)),
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                    Stack(
-                      children: [
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 130, 0, 0),
-                          child: Container(
-                            width: double.infinity,
-                            height: 120,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text("Bạn chưa có tài khoản?"),
-                                TextButton(
-                                  child: Text(
-                                    'Đăng ký ngay',
-                                    style: TextStyle(fontSize: 16),
+                          padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
+                          child: SizedBox(
+                            width: 300,
+                            height: 70,
+                            child: ElevatedButton.icon(
+                              onPressed: () {},
+                              icon: Icon(Icons.facebook),
+                              label: Text(
+                                "Đăng Nhập Bằng FaceBook",
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(
+                                    Color.fromRGBO(30, 144, 255, 1)),
+                                shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
                                   ),
-                                  onPressed: onRegister,
-                                )
-                              ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
+                          child: SizedBox(
+                            width: 300,
+                            height: 70,
+                            child: ElevatedButton.icon(
+                              onPressed: () {},
+                              icon: Icon(FontAwesomeIcons.google),
+                              label: Text("Đăng Nhập Bằng Google",
+                                  style: TextStyle(fontSize: 20)) ,
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(
+                                    Color.fromRGBO(30, 144, 255, 1)),
+                                shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -186,8 +181,6 @@ class _Login_PageState extends State<Login_Page> {
   }
 
   Widget gotoOTP_Page(BuildContext context) {
-    return OTP_Page(toString());
+    return OTP_Page(_phonenumberController.text);
   }
-
-  
 }
