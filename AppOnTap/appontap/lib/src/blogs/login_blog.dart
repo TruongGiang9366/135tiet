@@ -3,34 +3,28 @@ import 'package:appontap/src/Login_Page.dart';
 import 'package:appontap/src/validators/validations.dart';
 
 class LoginBloc {
-  StreamController _userController = new StreamController();
-  StreamController _phonenumberController = new StreamController();
+  StreamController _passController = new StreamController();
+  StreamController _emailController = new StreamController();
 
-  Stream get userStream => _userController.stream;
-  Stream get phoneStream => _phonenumberController.stream;
+  Stream get emailStream => _emailController.stream;
+  Stream get passStream => _passController.stream;
 
-  // Stream getUserStream() {
-  //   return _userController.stream;
-  // }
-
-  bool isValidInfo(String phonenumber) {
-    //String pass
-    // if (!Validations.isValidUser(username)) {
-    //   _userController.sink.addError('Vui lòng nhập số điện thoại');
-    //   return false;
-    // }
-    // _userController.sink.add("");
-
-    if (!Validations.isValidPhoneName(phonenumber)) {
-      _phonenumberController.sink.addError('Nhập số điện thoại');
+  bool isValid(String pass, String email) {
+    if (!Validations.isValidEmail(email)) {
+      _emailController.sink
+          .addError('Email không thể bỏ trống, hoặc thiếu "@"!!!!');
       return false;
     }
-    _phonenumberController.sink.add("Ok");
+    _emailController.sink.add("");
+    if (!Validations.isValidPass(pass)) {
+      _passController.sink.addError('Password phải trên 6 kí tự');
+      return false;
+    }
     return true;
   }
 
   void dispose() {
-    // _userController.close();
-    _phonenumberController.close();
+    _passController.close();
+    _emailController.close();
   }
 }

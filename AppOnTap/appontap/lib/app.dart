@@ -2,7 +2,6 @@ import 'package:appontap/src/DashBoard.dart';
 import 'package:appontap/src/Edit.dart';
 import 'package:appontap/src/Lesson.dart';
 import 'package:appontap/src/Login_Page.dart';
-import 'package:appontap/src/OTP.dart';
 import 'package:appontap/src/Practice.dart';
 import 'package:appontap/src/Profile.dart';
 import 'package:appontap/src/Rank.dart';

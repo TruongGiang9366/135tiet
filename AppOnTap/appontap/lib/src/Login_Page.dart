@@ -1,5 +1,4 @@
 import 'package:appontap/src/DashBoard.dart';
-import 'package:appontap/src/OTP.dart';
 import 'package:appontap/src/Register.dart';
 import 'package:appontap/src/blogs/Login_blog.dart';
 import 'package:flutter/material.dart';
@@ -13,57 +12,57 @@ class Login_Page extends StatefulWidget {
 
 class _Login_PageState extends State<Login_Page> {
   LoginBloc bloc = new LoginBloc();
-  TextEditingController _phonenumberController = new TextEditingController();
+  TextEditingController _passController = new TextEditingController();
+  TextEditingController _emailController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        // backgroundColor: Color(0xffDAB56F),
-        appBar: AppBar(
-          backgroundColor: Color(0xffDAB56F),
-          toolbarHeight: 100,
-          elevation: 0,
+        home: Scaffold(
+      // backgroundColor: Color(0xffDAB56F),
+      appBar: AppBar(
+        backgroundColor: Color(0xffDAB56F),
+        toolbarHeight: 100,
+        elevation: 0,
 
-          //backgroundColor: Colors.blue,
-          centerTitle: true,
-          title: Container(
-            margin: const EdgeInsets.only(
-              top: 50,
-            ),
-            decoration: BoxDecoration(
-              //color: Colors.white,
-              borderRadius: BorderRadius.circular(0),
-            ),
-            child: const Text(
-              "Việt Nam Tôi Yêu",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 32),
-            ),
+        //backgroundColor: Colors.blue,
+        centerTitle: true,
+        title: Container(
+          margin: const EdgeInsets.only(
+            top: 50,
           ),
-        ),
-        body: Container(
           decoration: BoxDecoration(
-            color: Color(0xffDAB56F),
+            //color: Colors.white,
             borderRadius: BorderRadius.circular(0),
           ),
-          child: Container(
-            margin: const EdgeInsets.only(
-              top: 50,
+          child: const Text(
+            "Việt Nam Tôi Yêu",
+            style: TextStyle(
+                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 32),
+          ),
+        ),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Color(0xffDAB56F),
+          borderRadius: BorderRadius.circular(0),
+        ),
+        child: Container(
+          margin: const EdgeInsets.only(
+            top: 50,
+          ),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
             ),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20),
-                topRight: Radius.circular(20),
-              ),
-            ),
-            child: SingleChildScrollView(
-              child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-                  child: Column(children: [
+          ),
+          child: SingleChildScrollView(
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 60, 0, 0),
+                child: Column(
+                  children: [
                     const Text(
                       "Đăng Nhập",
                       style: TextStyle(
@@ -71,97 +70,143 @@ class _Login_PageState extends State<Login_Page> {
                         fontSize: 36,
                       ),
                     ),
-                    Column(
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(30, 20, 30, 0),
+                      child: StreamBuilder(
+                        stream: bloc.emailStream,
+                        builder: (context, snapshot) => TextField(
+                          controller: _emailController,
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.black,
+                          ),
+                          decoration: InputDecoration(
+                            hintText: 'Email',
+                            labelText: 'Email',
+                            icon: Icon(Icons.email),
+                            errorText: snapshot.hasError
+                                ? snapshot.error.toString()
+                                : null,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                          ),
+                          keyboardType: TextInputType.emailAddress,
+                          textInputAction: TextInputAction.done,
+                        ),
+                      ),
+                    ),
+                    Stack(children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(30, 20, 30, 40),
+                        child: StreamBuilder(
+                          stream: bloc.passStream,
+                          builder: (context, snapshot) => TextField(
+                            controller: _passController,
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black,
+                            ),
+                            obscureText: true,
+                            decoration: InputDecoration(
+                              hintText: 'PassWord',
+                              labelText: 'PassWord',
+                              icon: Icon(Icons.password),
+                              errorText: snapshot.hasError
+                                  ? snapshot.error.toString()
+                                  : null,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              labelStyle: TextStyle(
+                                  color: Color(0xff888888), fontSize: 15),
+                            ),
+                            keyboardType: TextInputType.number,
+                            textInputAction: TextInputAction.done,
+                          ),
+                        ),
+                      ),
+                    ]),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                      child: SizedBox(
+                        width: 200,
+                        height: 50,
+                        child: ElevatedButton(
+                          onPressed: onDashBoard,
+                          child: Text(
+                            'Đăng Nhập',
+                            style: TextStyle(fontSize: 15, color: Colors.black),
+                          ),
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Color(0xFFe0e0e0)),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Stack(
                       children: [
                         Padding(
-                          padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
-                          child: SizedBox(
-                            width: 300,
-                            height: 70,
-                            child: ElevatedButton.icon(
-                              onPressed: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => OTP_Page(toString()),
-                                  )),
-                              icon: Icon(Icons.phone),
-                              label: Text(
-                                "Đăng Nhập Bằng Số Điện Thoại",
-                                style: TextStyle(
-                                  fontSize: 20,
-                                ),
-                              ),
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                    Color.fromRGBO(30, 144, 255, 1)),
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
+                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                          child: Container(
+                            width: double.infinity,
+                            height: 120,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text("Bạn chưa có tài khoản?"),
+                                TextButton(
+                                  child: Text(
+                                    'Đăng ký ngay',
+                                    style: TextStyle(fontSize: 16),
                                   ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
-                          child: SizedBox(
-                            width: 300,
-                            height: 70,
-                            child: ElevatedButton.icon(
-                              onPressed: () {},
-                              icon: Icon(Icons.facebook),
-                              label: Text(
-                                "Đăng Nhập Bằng FaceBook",
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                    Color.fromRGBO(30, 144, 255, 1)),
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
-                          child: SizedBox(
-                            width: 300,
-                            height: 70,
-                            child: ElevatedButton.icon(
-                              onPressed: () {},
-                              icon: Icon(FontAwesomeIcons.google),
-                              label: Text("Đăng Nhập Bằng Google",
-                                  style: TextStyle(fontSize: 20)) ,
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                    Color.fromRGBO(30, 144, 255, 1)),
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                ),
-                              ),
+                                  onPressed: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              Register_Page())),
+                                )
+                              ],
                             ),
                           ),
                         ),
                       ],
                     ),
-                  ]),
+                    Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 50),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.facebook,
+                                size: 60,
+                              ),
+                            ),
+                            IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  FontAwesomeIcons.google,
+                                  size: 50,
+                                ))
+                          ],
+                        ))
+                  ],
                 ),
               ),
             ),
           ),
         ),
       ),
-    );
+    ));
   }
 
   void onRegister() {
@@ -173,14 +218,17 @@ class _Login_PageState extends State<Login_Page> {
     return Register_Page();
   }
 
-  void onOTP() {
-    if (bloc.isValidInfo(_phonenumberController.text)) {
+  void onDashBoard() {
+    if (bloc.isValid(
+      _emailController.text,
+      _passController.text,
+    )) {
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => gotoOTP_Page(context)));
+          MaterialPageRoute(builder: (context) => gotoDashBoard(context)));
     }
   }
 
-  Widget gotoOTP_Page(BuildContext context) {
-    return OTP_Page(_phonenumberController.text);
+  Widget gotoDashBoard(BuildContext context) {
+    return DashBoard_Page();
   }
 }
