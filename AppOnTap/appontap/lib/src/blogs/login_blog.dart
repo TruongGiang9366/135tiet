@@ -9,7 +9,7 @@ class LoginBloc {
   Stream get emailStream => _emailController.stream;
   Stream get passStream => _passController.stream;
 
-  bool isValid(String pass, String email) {
+  bool isValid(String email, String pass) {
     if (!Validations.isValidEmail(email)) {
       _emailController.sink
           .addError('Email không thể bỏ trống, hoặc thiếu "@"!!!!');
@@ -20,11 +20,12 @@ class LoginBloc {
       _passController.sink.addError('Password phải trên 6 kí tự');
       return false;
     }
+    _passController.sink.add("");
     return true;
   }
 
   void dispose() {
-    _passController.close();
     _emailController.close();
+    _passController.close();
   }
 }

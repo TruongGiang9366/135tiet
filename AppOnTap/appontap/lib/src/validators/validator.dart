@@ -12,8 +12,4 @@ class Validations {
   static bool isValidPhone(String phone) {
     return phone != null && phone.length >= 10;
   }
-
-  static bool isValidPhoneName(String phonename) {
-    return phonename != null && phonename.length >= 10;
-  }
 }

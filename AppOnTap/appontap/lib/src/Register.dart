@@ -17,6 +17,7 @@ class _Register_PageState extends State<Register_Page> {
   TextEditingController _nameController = new TextEditingController();
   TextEditingController _emailController = new TextEditingController();
   TextEditingController _phoneController = new TextEditingController();
+  TextEditingController _passController = new TextEditingController();
   RegisterBloc bloc = new RegisterBloc();
   @override
   void dispose() {
@@ -189,6 +190,36 @@ class _Register_PageState extends State<Register_Page> {
                           ),
                         ),
                       ),
+                      Stack(children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(30, 20, 30, 40),
+                          child: StreamBuilder(
+                            stream: bloc.passStream,
+                            builder: (context, snapshot) => TextField(
+                              controller: _passController,
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.black,
+                              ),
+                              obscureText: true,
+                              decoration: InputDecoration(
+                                hintText: 'PassWord',
+                                labelText: 'PassWord',
+                                errorText: snapshot.hasError
+                                    ? snapshot.error.toString()
+                                    : null,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                labelStyle: TextStyle(
+                                    color: Color(0xff888888), fontSize: 15),
+                              ),
+                              keyboardType: TextInputType.number,
+                              textInputAction: TextInputAction.done,
+                            ),
+                          ),
+                        ),
+                      ]),
                       Padding(
                         padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
                         child: SizedBox(
@@ -260,8 +291,8 @@ class _Register_PageState extends State<Register_Page> {
   }
 
   void onSuccess() {
-    if (bloc.isValid(
-        _nameController.text, _emailController.text, _phoneController.text)) {
+    if (bloc.isValid(_nameController.text, _emailController.text,
+        _phoneController.text, _passController.text)) {
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => gotoSuccessPage(context)));
     }
