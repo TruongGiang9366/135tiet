@@ -1,5 +1,6 @@
 import 'package:appontap/src/Settings.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
 class Edit_Page extends StatefulWidget {
@@ -110,6 +111,7 @@ class _Edit_PageState extends State<Edit_Page> {
                           decoration: InputDecoration(
                             hintText: 'Họ và tên',
                             labelText: 'Họ và tên',
+                            icon: Icon(FontAwesomeIcons.user),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.0),
                             ),
@@ -182,6 +184,7 @@ class _Edit_PageState extends State<Edit_Page> {
                           decoration: InputDecoration(
                             hintText: 'Email',
                             labelText: 'Email',
+                            icon: Icon(Icons.email),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.0),
                             ),

@@ -1,3 +1,4 @@
+import 'package:appontap/main_page.dart';
 import 'package:appontap/src/Login_Page.dart';
 import 'package:flutter/material.dart';
 
@@ -67,7 +68,8 @@ class _WelcomeAppState extends State<WelcomeApp> {
                         )
                       ],
                     ),
-                  )
+                  ),
+                 
                 ],
               ),
             ),
@@ -83,6 +85,6 @@ class _WelcomeAppState extends State<WelcomeApp> {
   }
 
   Widget gotoLoginPage(BuildContext context) {
-    return Login_Page();
+    return const MainPage();
   }
 }

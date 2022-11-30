@@ -17,7 +17,7 @@ class LoginBloc {
     }
     _emailController.sink.add("");
     if (!Validations.isValidPass(pass)) {
-      _passController.sink.addError('Password phải trên 6 kí tự');
+      _passController.sink.addError('Password phải trên 6 kí tự hoặc sai Password');
       return false;
     }
     _passController.sink.add("");

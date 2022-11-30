@@ -1,8 +1,11 @@
 import 'dart:async';
 import 'package:appontap/src/Register.dart';
+import 'package:appontap/src/fire_base/fire_base_auth.dart';
 import 'package:appontap/src/validators/validator.dart';
 
 class RegisterBloc {
+  var _firAuth = FirAuth();
+
   StreamController _nameController = new StreamController();
   StreamController _emailController = new StreamController();
   StreamController _passController = new StreamController();
@@ -38,6 +41,11 @@ class RegisterBloc {
     }
     _passController.sink.add("");
     return true;
+  }
+
+  void signUp(String email, String pass, String phone, String name,
+      Function onSuccess) {
+    _firAuth.signUp(email, pass, name, phone, onSuccess);
   }
 
   void dispose() {

@@ -56,7 +56,7 @@ class _DashBoard_PageState extends State<DashBoard_Page> {
                             ),
                             Container(
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 200),
+                                padding: const EdgeInsets.only(left: 150),
                                 child: IconButton(
                                   icon: Image.asset("assets/businessman.png"),
                                   onPressed: () => Navigator.push(

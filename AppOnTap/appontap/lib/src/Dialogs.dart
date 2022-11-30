@@ -1,4 +1,6 @@
+import 'package:appontap/main_page.dart';
 import 'package:appontap/src/Login_Page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Dialogs {
@@ -22,9 +24,10 @@ class Dialogs {
             ),
             ElevatedButton(
               onPressed: () {
+                FirebaseAuth.instance.signOut();
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Login_Page()),
+                  MaterialPageRoute(builder: (context) => MainPage()),
                 );
               },
               child: Text("Ok"),
