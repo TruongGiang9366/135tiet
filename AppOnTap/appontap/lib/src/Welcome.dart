@@ -65,11 +65,10 @@ class _WelcomeAppState extends State<WelcomeApp> {
                           style: raisedButtonStyle,
                           onPressed: onContinue,
                           child: Text('Tiếp Tục'),
-                        )
+                        ),
                       ],
                     ),
                   ),
-                 
                 ],
               ),
             ),

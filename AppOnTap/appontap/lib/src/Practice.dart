@@ -1,5 +1,8 @@
 import 'package:appontap/src/DashBoard.dart';
+import 'package:appontap/src/Lesson.dart';
 import 'package:appontap/src/Profile.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class Practice_Page extends StatefulWidget {
@@ -10,6 +13,12 @@ class Practice_Page extends StatefulWidget {
 }
 
 class _Practice_PageState extends State<Practice_Page> {
+  Future addData(String baihoc) async {
+    await FirebaseFirestore.instance.collection('users').add({
+      "Bai Hoc": baihoc,
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -128,7 +137,10 @@ class _Practice_PageState extends State<Practice_Page> {
                                 width: 320.0,
                                 height: 80.0,
                                 child: ElevatedButton(
-                                  onPressed: () {},
+                                  onPressed: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Lesson_Page())),
                                   child: Container(
                                     alignment: Alignment.centerLeft,
                                     child: Padding(

@@ -1,4 +1,4 @@
-import 'package:appontap/src/Assignment1.dart';
+import 'package:appontap/src/quizz.dart';
 import 'package:appontap/src/Auditions.dart';
 import 'package:appontap/src/Profile.dart';
 import 'package:flutter/material.dart';
@@ -155,7 +155,7 @@ class _test1_PageState extends State<test1_Page> {
                         width: 200,
                         height: 50,
                         child: ElevatedButton(
-                          onPressed: onAssignment1,
+                          onPressed: () {},
                           child: Text(
                             'Bắt đầu làm bài',
                             style: TextStyle(fontSize: 15, color: Colors.black),
@@ -183,12 +183,12 @@ class _test1_PageState extends State<test1_Page> {
     );
   }
 
-  void onAssignment1() {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => gotoAssignment1_page(context)));
-  }
+  // void onAssignment1() {
+  //   Navigator.push(context,
+  //       MaterialPageRoute(builder: (context) => gotoAssignment1_page(context)));
+  // }
 
-  Widget gotoAssignment1_page(BuildContext context) {
-    return Assignment1();
-  }
+  // Widget gotoAssignment1_page(BuildContext context) {
+  //   return quizz();
+  // }
 }
